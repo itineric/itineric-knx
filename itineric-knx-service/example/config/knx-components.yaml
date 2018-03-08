@@ -1,0 +1,33 @@
+# declare lights
+light:
+  - name: living
+# declare aliases
+    aliases:
+      - living room
+# declare KNX addresses
+    address: "3/1/0"
+    stateAddress: "3/2/0"
+  - name: kitchen
+    address: "3/1/1"
+    stateAddress: "3/2/1"
+# create groups
+  - name: all
+    subElements:
+      - living
+      - kitchen
+
+# declare covers
+cover:
+  - name: living room north
+# declare KNX addresses
+    moveAddress: "5/1/0"
+    stopAddress: "5/2/0"
+    positionStateAddress: "5/3/0"
+  - name: living room west
+    moveAddress: "5/1/1"
+    stopAddress: "5/2/1"
+    positionStateAddress: "5/3/1"
+  - name: cuisine
+    subElements:
+      - living room north
+      - living room west
